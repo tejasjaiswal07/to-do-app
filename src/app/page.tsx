@@ -1,8 +1,9 @@
 import { TodoItem } from "../components/TodoItem";
 import { Todo } from "@/prisma/@prisma/client";
-import { prisma } from "../db";
+// import { prisma } from "../db";
 import Link from "next/link";
-
+import { PrismaClient } from "@/prisma/@prisma/client";
+const prisma = new PrismaClient();
 function getTodos() {
   return prisma.todo.findMany();
 }
