@@ -14,7 +14,7 @@ async function toggleTodo(id: string, complete: boolean) {
 }
 
 export default async function Home() {
-  const todos = await getTodos();
+  const todos: Todo[] = await getTodos();
 
   return (
     <>
