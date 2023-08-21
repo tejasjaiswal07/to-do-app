@@ -1,4 +1,3 @@
-import { Todo } from "@prisma/client";
 import { TodoItem } from "../components/TodoItem";
 import { prisma } from "../db";
 import Link from "next/link";
@@ -14,7 +13,7 @@ async function toggleTodo(id: string, complete: boolean) {
 }
 
 export default async function Home() {
-  const todos: Todo[] = await getTodos();
+  const todos = await getTodos();
 
   return (
     <>
@@ -28,7 +27,7 @@ export default async function Home() {
         </Link>
       </header>
       <ul className="pl-4">
-        {todos.map((todo: Todo) => (
+        {todos.map((todo) => (
           <TodoItem
             complete={false}
             key={todo.id}
